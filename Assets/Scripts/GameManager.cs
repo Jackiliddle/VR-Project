@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
 
+    [Header("Gameplay UI")]
+    public TextMeshProUGUI catchText; // <-- "Catch" text (ONLY show during gameplay)
+
     [Header("Gameplay")]
     public PestSpawner pestSpawner;
 
@@ -22,11 +25,11 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
 
     [Header("Countdown")]
-    public TextMeshProUGUI startText; 
+    public TextMeshProUGUI startText;
     public float countdownTime = 3f;
 
     [Header("Pause")]
-    public GameObject pauseMenu; 
+    public GameObject pauseMenu;
     private bool isPaused = false;
 
     [Header("Instructions Panel")]
@@ -40,6 +43,10 @@ public class GameManager : MonoBehaviour
         highScoreText.text = "High Score: " + highScore;
 
         pestSpawner.HideAllBurrows();
+
+        // Catch text should NOT show on title screen / startup
+        if (catchText != null)
+            catchText.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -66,8 +73,13 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(int difficulty)
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         titleScreen.SetActive(false);
+
+        // Hide Catch during countdown
+        if (catchText != null)
+            catchText.gameObject.SetActive(false);
+
         StartCoroutine(CountdownAndStart(difficulty));
     }
 
@@ -86,6 +98,11 @@ public class GameManager : MonoBehaviour
         startText.gameObject.SetActive(false);
 
         isGameActive = true;
+
+        // Show Catch ONLY when gameplay is actually running
+        if (catchText != null)
+            catchText.gameObject.SetActive(true);
+
         score = 0;
         UpdateScore(0);
 
@@ -111,6 +128,10 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
 
+        // Hide Catch on game over
+        if (catchText != null)
+            catchText.gameObject.SetActive(false);
+
         if (pestSpawner != null)
             pestSpawner.StopAllCoroutines();
 
@@ -122,7 +143,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("Restart Clicked!");
     }
@@ -147,6 +168,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             isPaused = false;
             if (pauseMenu != null) pauseMenu.SetActive(false);
+
+            // Show Catch again ONLY if game is active
+            if (catchText != null && isGameActive)
+                catchText.gameObject.SetActive(true);
         }
         else
         {
@@ -154,6 +179,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             isPaused = true;
             if (pauseMenu != null) pauseMenu.SetActive(true);
+
+            // Hide Catch while paused
+            if (catchText != null)
+                catchText.gameObject.SetActive(false);
         }
     }
 
@@ -173,6 +202,10 @@ public class GameManager : MonoBehaviour
         titleScreen.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
+
+        // Hide Catch on main menu / title screen
+        if (catchText != null)
+            catchText.gameObject.SetActive(false);
 
         Debug.Log("Returned to Main Menu");
     }
