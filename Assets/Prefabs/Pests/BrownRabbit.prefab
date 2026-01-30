@@ -1846,6 +1846,7 @@ GameObject:
   - component: {fileID: -2008489960188399852}
   - component: {fileID: 4521686671902981705}
   - component: {fileID: -7875849434530363160}
+  - component: {fileID: 5131157480806084104}
   m_Layer: 0
   m_Name: BrownRabbit
   m_TagString: Rabbit
@@ -1909,7 +1910,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1941,7 +1942,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &7325006048578987064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,10 +1976,10 @@ MonoBehaviour:
   wanderRadius: 2
   wanderDelay: 2
   scoreValue: 10
-  minX: -1
-  maxX: 1
-  minZ: -1
-  maxZ: 1
+  minX: -10
+  maxX: 10
+  minZ: -10
+  maxZ: 10
   lapsToEat: 2
   eatDistance: 1
   lapDetectionRadius: 3
@@ -2070,7 +2071,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 1
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -2140,6 +2141,18 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &5131157480806084104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865580132820027119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35c6d3efbecd4f3687c1521ab88a5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1 &8929039054413593102
 GameObject:
   m_ObjectHideFlags: 0

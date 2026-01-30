@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 8155234749392520877}
   - component: {fileID: -8054511066251507313}
   - component: {fileID: 1001053452714120735}
+  - component: {fileID: -8664585876149927886}
   m_Layer: 0
   m_Name: WhiteRabbit
   m_TagString: Rabbit
@@ -976,7 +977,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1008,7 +1009,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &9040019088834151744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,10 +1043,10 @@ MonoBehaviour:
   wanderRadius: 2
   wanderDelay: 2
   scoreValue: 5
-  minX: -1
-  maxX: 1
-  minZ: -1
-  maxZ: 1
+  minX: -10
+  maxX: 10
+  minZ: -10
+  maxZ: 10
   lapsToEat: 1
   eatDistance: 1
   lapDetectionRadius: 3
@@ -1160,7 +1161,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 1
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -1207,6 +1208,18 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &-8664585876149927886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464027970101978662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35c6d3efbecd4f3687c1521ab88a5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1 &4527352557261392228
 GameObject:
   m_ObjectHideFlags: 0
