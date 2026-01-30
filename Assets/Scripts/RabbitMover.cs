@@ -2,35 +2,55 @@ using UnityEngine;
 
 public class RabbitMover : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    public float speed = 3f;
-    public float wanderRadius = 2f;
-    public float wanderDelay = 2f;
+    // [Header("Movement Settings")] (WEB GAME)
+    // public float speed = 3f;
+    // public float wanderRadius = 2f;
+    // public float wanderDelay = 2f;
+
+    [Header("Movement Settings")] // UPDATED FOR VR
+    public float speed = 1.0f;
+    public float wanderRadius = 0.4f;
+    public float wanderDelay = 1.0f;
 
     [Header("Points")]
     public int scoreValue = 5;
 
-    [Header("Movement Boundaries")] // NB: DON'T CHANGE!
-    public float minX = -10f;
-    public float maxX = 10f;
-    public float minZ = -10f;
-    public float maxZ = 10f;
+    // [Header("Movement Boundaries")] // NB: DON'T CHANGE!
+    // public float minX = -10f;
+    // public float maxX = 10f;
+    // public float minZ = -10f;
+    // public float maxZ = 10f;
+
+    [Header("Movement Boundaries")] // UPDATED FOR VR
+    public float minX = -1f;
+    public float maxX = 1f;
+    public float minZ = -1f;
+    public float maxZ = 1f;
 
     [Header("Eating Settings")]
     public int lapsToEat = 5;
 
-    [Header("Distance-based Eating")]
-    public float eatDistance = 1.0f;
-    public float lapDetectionRadius = 3f;
+    // [Header("Distance-based Eating")]
+    // public float eatDistance = 1.0f;
+    // public float lapDetectionRadius = 3f;
+
+    [Header("Distance-based Eating")] //UPDATED FOR VR
+    public float eatDistance = 0.25f;
+    public float lapDetectionRadius = 0.5f;
 
     [Header("Eating Audio")]
     private AudioSource monchFXAudioSource;
     public AudioClip monchAudioFX;
 
-    [Header("Player Awareness")]
-    [SerializeField, HideInInspector] private float fleeRadius = 1.5f;
+    // [Header("Player Awareness")]
+    // [SerializeField, HideInInspector] private float fleeRadius = 1.5f;
+    // [SerializeField, HideInInspector] private float fleeSpeedMultiplier = 1.2f;
+    // [SerializeField, HideInInspector] private float panicDuration = 2f;
+
+    [Header("Player Awareness")] //UPDATED FOR VR
+    [SerializeField, HideInInspector] private float fleeRadius = 0.6f;
     [SerializeField, HideInInspector] private float fleeSpeedMultiplier = 1.2f;
-    [SerializeField, HideInInspector] private float panicDuration = 2f;
+    [SerializeField, HideInInspector] private float panicDuration = 1.5f;
 
     private Transform player;
     private bool isFleeing = false;
