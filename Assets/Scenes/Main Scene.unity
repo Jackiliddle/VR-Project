@@ -1968,13 +1968,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 86592994}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 86592993}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 86592992}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 86592998}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 86593000}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &86592990 stripped
 Transform:
@@ -2026,7 +2029,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &86592994
+--- !u!114 &86592998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86592991}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &86593000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2035,10 +2051,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 86592991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &92357708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2128,6 +2150,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000012003911730, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1752130245}
+    - targetCorrespondingSourceObject: {fileID: 1000012003911730, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1752130249}
   m_SourcePrefab: {fileID: 100100000, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
 --- !u!4 &92357709 stripped
 Transform:
@@ -4075,6 +4100,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1936740094}
     m_Modifications:
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: growDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5824465393037604548, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -4138,6 +4171,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 197247151}
+    - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 197247157}
   m_SourcePrefab: {fileID: 100100000, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
 --- !u!4 &197247149 stripped
 Transform:
@@ -4162,6 +4198,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &197247157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197247150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &198438773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4940,6 +4995,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 254581161}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254581165}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &254581155 stripped
 Transform:
@@ -4953,12 +5011,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116494196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
 --- !u!54 &254581160
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4999,6 +5057,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &254581165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116494196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!4 &260811083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4526791939225540, guid: c23a5db78ca1a5b4f921e0109f33128c, type: 3}
@@ -5875,13 +5952,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6397250080482365362, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 301105304}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 301105310}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 301105312}
   m_SourcePrefab: {fileID: 100100000, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
 --- !u!4 &301105302 stripped
 Transform:
@@ -5906,6 +5990,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &301105310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301105303}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &301105312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301105303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1 &307830747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6a52aea886ff71343a7b3ac3ec6dfd92, type: 3}
@@ -6295,7 +6411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010819335194, guid: c26cacf51e485c54b95fdbf9ad976ddf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.11
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 4000010819335194, guid: c26cacf51e485c54b95fdbf9ad976ddf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6629,6 +6745,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4870204933709518, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
   m_PrefabInstance: {fileID: 1737528256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &330151487
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 649305491}
+    m_Modifications:
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Name
+      value: Mushroom_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539311194558750260, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
 --- !u!1001 &331918589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7078,6 +7271,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1936740094}
     m_Modifications:
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: growDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5824465393037604548, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -7141,6 +7342,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 372094999}
+    - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 372095005}
   m_SourcePrefab: {fileID: 100100000, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
 --- !u!4 &372094997 stripped
 Transform:
@@ -7165,6 +7369,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &372095005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372094998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &377552173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7627,13 +7850,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 404839129}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 404839128}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 404839127}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404839133}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404839135}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &404839125 stripped
 Transform:
@@ -7685,7 +7911,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &404839129
+--- !u!114 &404839133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404839126}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &404839135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7694,10 +7933,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 404839126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1 &404869311
 GameObject:
   m_ObjectHideFlags: 0
@@ -8268,6 +8513,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
+--- !u!1001 &421404960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 649305491}
+    m_Modifications:
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Name
+      value: Mushroom_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539311194558750260, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
 --- !u!4 &421974812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4026302497858488, guid: b4974e3ae06d3d245a8353b888faed9d, type: 3}
@@ -8441,7 +8763,7 @@ Transform:
   m_GameObject: {fileID: 447778282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10903,6 +11225,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+--- !u!4 &643603353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+  m_PrefabInstance: {fileID: 1088470584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &648045228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385080170327957909, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
@@ -11027,6 +11354,9 @@ Transform:
   - {fileID: 1805069046}
   - {fileID: 309553305}
   - {fileID: 103750424}
+  - {fileID: 643603353}
+  - {fileID: 961914973}
+  - {fileID: 1831137593}
   - {fileID: 512745418}
   - {fileID: 648045228}
   - {fileID: 2073457263}
@@ -11973,6 +12303,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 682691386}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 682691392}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &682691384 stripped
 Transform:
@@ -12031,12 +12364,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682691385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &682691392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682691385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!4 &683589917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4838067341564878, guid: 39de80c7e7a1a2942820576875608e5d, type: 3}
@@ -12185,13 +12537,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 688521143}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 688521142}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 688521141}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 688521147}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 688521149}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &688521139 stripped
 Transform:
@@ -12243,7 +12598,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &688521143
+--- !u!114 &688521147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688521140}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &688521149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12252,10 +12620,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 688521140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!4 &689061051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4739574486837986, guid: b0622c7c0ff092b46a37f31c718c5eba, type: 3}
@@ -13372,32 +13746,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 762023436}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 762023437}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 762023438}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762023442}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762023444}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &762023432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010382424806, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
   m_PrefabInstance: {fileID: 762023431}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &762023436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585441853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
 --- !u!54 &762023437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13438,6 +13802,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &762023442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585441853}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &762023444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585441853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!4 &762192676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4870204933709518, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
@@ -15950,6 +16346,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 919213651}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919213657}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &919213649 stripped
 Transform:
@@ -16008,12 +16407,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919213650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &919213657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919213650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!4 &926423075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4622981333497442, guid: dd3ee0c97aab8a7498c9292f3482f60b, type: 3}
@@ -16102,13 +16520,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2017484815}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2017484816}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2017484817}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2017484821}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2017484823}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &930754098 stripped
 Transform:
@@ -16364,13 +16785,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 946401494}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 946401493}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 946401492}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 946401498}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 946401500}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &946401490 stripped
 Transform:
@@ -16422,7 +16846,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &946401494
+--- !u!114 &946401498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946401491}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &946401500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16431,10 +16868,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 946401491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!4 &947082586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4945391837379990, guid: 9b6eba5dea9e77a4abd8f45df1ffffb6, type: 3}
@@ -16636,6 +17079,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4739574486837986, guid: b0622c7c0ff092b46a37f31c718c5eba, type: 3}
   m_PrefabInstance: {fileID: 1385332851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &961914973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+  m_PrefabInstance: {fileID: 330151487}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &963077982
 GameObject:
@@ -17291,13 +17739,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6397250080482365362, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 996997056}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 996997062}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 996997064}
   m_SourcePrefab: {fileID: 100100000, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
 --- !u!4 &996997054 stripped
 Transform:
@@ -17322,6 +17777,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &996997062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996997055}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &996997064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996997055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!4 &997402746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4775219554002278, guid: 6b444276162548b4e9107350b71e775a, type: 3}
@@ -18119,7 +18606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 1810, y: 967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046378134
@@ -18316,6 +18803,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000012003911730, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1055165947}
+    - targetCorrespondingSourceObject: {fileID: 1000012003911730, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1055165951}
   m_SourcePrefab: {fileID: 100100000, guid: 0adfa404918648e42a1fb073ef9010d3, type: 3}
 --- !u!4 &1055165941 stripped
 Transform:
@@ -18329,12 +18819,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74175116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
 --- !u!54 &1055165946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18375,6 +18865,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &1055165951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74175116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1 &1056028112
 GameObject:
   m_ObjectHideFlags: 0
@@ -19207,6 +19716,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087686539}
   m_CullTransparentMesh: 1
+--- !u!1001 &1088470584
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 649305491}
+    m_Modifications:
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Name
+      value: Mushroom_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539311194558750260, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
 --- !u!4 &1093643534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4870204933709518, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
@@ -20074,6 +20660,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1136426869}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1136426875}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &1136426867 stripped
 Transform:
@@ -20132,12 +20721,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136426868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &1136426875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136426868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &1137125777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25064,6 +25672,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1390223467}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1390223471}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &1390223461 stripped
 Transform:
@@ -25077,12 +25688,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858515558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
 --- !u!54 &1390223466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25123,6 +25734,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &1390223471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858515558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1 &1400457259
 GameObject:
   m_ObjectHideFlags: 0
@@ -25690,13 +26320,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1426005625}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1426005624}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1426005623}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426005629}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426005631}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &1426005621 stripped
 Transform:
@@ -25748,7 +26381,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1426005625
+--- !u!114 &1426005629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426005622}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &1426005631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25757,10 +26403,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1426005622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &1430473498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27257,6 +27909,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
+--- !u!4 &1502313774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1580087747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1504207788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
@@ -27275,6 +27932,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &1504207800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504207788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!4 &1513707357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4026302497858488, guid: b4974e3ae06d3d245a8353b888faed9d, type: 3}
@@ -27950,6 +28626,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4870204933709518, guid: d2cd02263a1e8084abf81f1324b929be, type: 3}
   m_PrefabInstance: {fileID: 1966717594}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1561982500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561982501}
+  m_Layer: 0
+  m_Name: HandAttach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1561982501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561982500}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1502313774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565010421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6998083660527073501, guid: 38126694105a44eddb1eb7b73efb7b24, type: 3}
@@ -28327,15 +29034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28343,11 +29050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28377,6 +29084,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: a2af7ab64bf4b4a99966ce2be9d82319, type: 3}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_name
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEditor.MonoScript, UnityEditor.CoreModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4778211696441940833, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_SmoothTurnEnabled
       value: 0
@@ -28397,6 +29132,10 @@ PrefabInstance:
       propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6678509202150728127, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_StartingGroupMembers.Array.size
       value: 2
@@ -28407,7 +29146,10 @@ PrefabInstance:
       objectReference: {fileID: 777070945}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561982501}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
@@ -29657,6 +30399,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1936740094}
     m_Modifications:
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: growDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5824465393037604548, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -29720,6 +30470,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1676946564}
+    - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1676946570}
   m_SourcePrefab: {fileID: 100100000, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
 --- !u!4 &1676946562 stripped
 Transform:
@@ -29744,6 +30497,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &1676946570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676946563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &1677109195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30456,6 +31228,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1714771190}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1714771196}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &1714771188 stripped
 Transform:
@@ -30514,12 +31289,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714771189}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &1714771196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714771189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1 &1720805217
 GameObject:
   m_ObjectHideFlags: 0
@@ -31231,12 +32025,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752130239}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
 --- !u!54 &1752130244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31277,6 +32071,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &1752130249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752130239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &1754764598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32462,6 +33275,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b444276162548b4e9107350b71e775a, type: 3}
+--- !u!4 &1831137593 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
+  m_PrefabInstance: {fileID: 421404960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833361811
 GameObject:
   m_ObjectHideFlags: 0
@@ -33321,6 +34139,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1856491799}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1856491805}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &1856491797 stripped
 Transform:
@@ -33379,12 +34200,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856491798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &1856491805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856491798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &1857716320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33894,6 +34734,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1885060538}
+    - targetCorrespondingSourceObject: {fileID: 1000013984154124, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1885060544}
   m_SourcePrefab: {fileID: 100100000, guid: 9c0476b14d8c518499bcc0adff155ff8, type: 3}
 --- !u!4 &1885060536 stripped
 Transform:
@@ -33952,12 +34795,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885060537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  growDuration: 30
+--- !u!114 &1885060544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885060537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -0.5
+  startScaleMultiplier: 0.1
+  initializeToStartStateOnEnable: 1
 --- !u!1 &1889598569 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -34256,7 +35118,7 @@ Transform:
   m_GameObject: {fileID: 1901085998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: -0.78}
+  m_LocalPosition: {x: 0.25, y: 1.05, z: -0.78}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -35943,13 +36805,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2002781609}
-    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2002781608}
     - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2002781607}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2002781613}
+    - targetCorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2002781615}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
 --- !u!4 &2002781605 stripped
 Transform:
@@ -36001,7 +36866,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &2002781609
+--- !u!114 &2002781613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002781606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &2002781615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36010,10 +36888,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2002781606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1001 &2003292671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36406,19 +37290,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
   m_PrefabInstance: {fileID: 930754097}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2017484815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017484811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
-  growDuration: 15
 --- !u!54 &2017484816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36459,6 +37330,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &2017484821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017484811}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &2017484823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017484811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!4 &2018733072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4622981333497442, guid: dd3ee0c97aab8a7498c9292f3482f60b, type: 3}
@@ -38599,13 +39502,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6397250080482365362, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2118100761}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2118100767}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2118100769}
   m_SourcePrefab: {fileID: 100100000, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
 --- !u!4 &2118100759 stripped
 Transform:
@@ -38630,6 +39540,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &2118100767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118100760}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &2118100769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118100760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!1 &2120729244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6a52aea886ff71343a7b3ac3ec6dfd92, type: 3}
@@ -39275,6 +40217,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &64000011318831340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010628498661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!114 &64000013135270207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39288,6 +40249,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Veggie
   gameManager: {fileID: 0}
+--- !u!114 &64000013135270213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013595534268}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a86b831abb74ba294db0899ef9a25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CropGrower
+  growDuration: 30
+--- !u!114 &64000013135270215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013595534268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d4b828a3b645dbb3cb2ff95a5e9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootCropGrower
+  baseGrowDuration: 15
+  staggerStep: 0.35
+  staggerJitter: 0.25
+  durationMultiplierRange: {x: 0.85, y: 1.25}
+  startYOffset: -1
+  startScaleMultiplier: 0
+  initializeToStartStateOnEnable: 1
 --- !u!114 &64000014058982754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39309,6 +40302,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1936740094}
     m_Modifications:
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109004708021012052, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      propertyPath: growDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5824465393037604548, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -39372,6 +40373,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504207794}
+    - targetCorrespondingSourceObject: {fileID: 5825705281300443506, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504207800}
   m_SourcePrefab: {fileID: 100100000, guid: 032b528bf9dbc44e6bc43347aedb2fa3, type: 3}
 --- !u!1001 &2798931864902603148
 PrefabInstance:
@@ -39437,13 +40441,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6397250080482365362, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64000013135270207}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64000013135270213}
+    - targetCorrespondingSourceObject: {fileID: 925444703327176296, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64000013135270215}
   m_SourcePrefab: {fileID: 100100000, guid: 24758493fc6a54f41a71f46a0ccba6e5, type: 3}
 --- !u!1001 &5571703033259408484
 PrefabInstance:
@@ -39453,6 +40464,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 43707683}
     m_Modifications:
+    - target: {fileID: 1919572969873484660, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919572969873484660, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
+      propertyPath: growDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6422122208935999172, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.36558008
@@ -39504,6 +40523,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7102595032401987062, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64000011318831334}
+    - targetCorrespondingSourceObject: {fileID: 7102595032401987062, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64000011318831340}
   m_SourcePrefab: {fileID: 100100000, guid: 3fb76179f71ee4f5ab1074d451c643bc, type: 3}
 --- !u!1001 &8145523792033885956
 PrefabInstance:

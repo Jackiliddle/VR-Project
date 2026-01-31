@@ -116,7 +116,7 @@ public class RabbitMover : MonoBehaviour
         if (pos.z < minZ) { pos.z = minZ; hitBoundary = true; }
         if (pos.z > maxZ) { pos.z = maxZ; hitBoundary = true; }
 
-        pos.y = 0f;
+        pos.y = 1f;
 
         if (hitBoundary)
             PickWanderTarget();

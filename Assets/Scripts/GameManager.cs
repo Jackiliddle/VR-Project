@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
             pestSpawner.AdjustDifficulty(difficulty);
 
         CropGrower.StartGrowingCrops();
+        RootCropGrower.StartGrowingCrops();
     }
 
     public void CheckGameOver()
