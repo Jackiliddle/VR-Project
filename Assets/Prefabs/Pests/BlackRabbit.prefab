@@ -452,7 +452,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &6142984459742472330
 MonoBehaviour:
@@ -667,6 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35c6d3efbecd4f3687c1521ab88a5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  rabbitMover: {fileID: 1901998831776603922}
+  pestSpawner: {fileID: 6142984459742472330}
+  setKinematicWhileHeld: 1
+  disableGravityWhileHeld: 1
+  freezeRotationWhileHeld: 1
 --- !u!1 &2173438991701956782
 GameObject:
   m_ObjectHideFlags: 0
