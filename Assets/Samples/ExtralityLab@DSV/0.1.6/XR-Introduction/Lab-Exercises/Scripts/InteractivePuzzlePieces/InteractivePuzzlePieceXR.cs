@@ -23,13 +23,14 @@ public abstract class BaseInteractivePuzzlePieceXR : MonoBehaviour
     public bool activateState = false; // Activates the object
     public bool playOneTimeActivateAudio = false; // Audio for one-time activation audio
     public bool playOneTimeDeactivateAudio = false; // Audio for one-time deactivation audio
+    public bool esp32Controlled;
 
     void Update()
     {
         if (m_IsControllable)
         {
             //if(Input.GetKey(interactKey))
-            if(interactActionReference.action.IsPressed())
+            if(interactActionReference.action.IsPressed() || esp32Controlled && m_IsControllable)
             {
                 activateState = true;
             }
