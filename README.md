@@ -1,4 +1,4 @@
-# Bin the buNS
+# Bin the Buns!
 
 A Unity VR garden game prototype presented in the main scene as **shoo, bunnies!** Protect your vegetables from rabbits, catch them to earn points, and keep the garden alive for as long as possible.
 
